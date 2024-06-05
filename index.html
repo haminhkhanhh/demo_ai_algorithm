@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trí tuệ nhân tạo</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="icon" href="favicon.png" type="image/gif" sizes="32x32">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/magic.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon//favicon-16x16.png">
+    <link rel="manifest" href="./favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark" id="myNavbar">
+        <a class="navbar-brand" href="#" id="logo">Demo thuật toán</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown" id="algorithms">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Thuật toán
+					</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">A*</a>
+                        <a class="dropdown-item" href="#">Dijkstra</a>
+                        <a class="dropdown-item" href="#">Tìm kiếm theo chiều rộng (BFS)</a>
+                        <a class="dropdown-item" href="#">Tìm kiếm theo chiều sâu (DFS)</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" id="mazes">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Ma trận
+					</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Ngẫu nhiên</a>
+                        <a class="dropdown-item" href="#">Phân chia đệ quy</a>
+                        <a class="dropdown-item" href="#">Phân chia đệ quy (Dọc)</a>
+                        <a class="dropdown-item" href="#">Phân chia đệ quy (Ngang)</a>
+                        <a class="dropdown-item" href="#">Xoắn ốc đơn giản</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" id="speed">
+                    <a class="nav-link dropdown-toggle speedDisplay" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Tốc độ: Nhanh
+					</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Chậm</a>
+                        <a class="dropdown-item" href="#">Bình thường</a>
+                        <a class="dropdown-item" href="#">Nhanh</a>
+                    </div>
+                </li>
+            </ul>
+
+            <button class="btn btn-outline-success btn-space" type="submit" id="startBtn">Bắt đầu</button>
+            <button type="button" class="btn btn-outline-warning btn-space" type="submit" id="clearBtn">Xoá</button>
+            <!-- <button type="button" class="btn btn-outline-danger disabled" type="submit" id="stopBtn">Stop</button> -->
+        </div>
+    </nav>
+
+    <div class="d-flex flex-row flex-wrap m-2 justify-content-around">
+        <div class="d-flex p-2">
+            <div class="key wall"></div>
+            <div>Tường</div>
+        </div>
+        <div class="d-flex p-2">
+            <div class="key start"></div>
+            <div>Bắt đầu</div>
+        </div>
+        <div class="d-flex p-2">
+            <div class="key end"></div>
+            <div>Mục tiêu</div>
+        </div>
+        <div class="d-flex p-2">
+            <div class="key visited"></div>
+            <div>Đã đi qua</div>
+        </div>
+        <div class="d-flex p-2">
+            <div class="key success"></div>
+            <div>Đường đi ngắn nhất</div>
+        </div>
+        <div class="d-flex p-2">
+            <div class="key"></div>
+            <div>Chưa đi qua</div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center" id="bigTableContainer">
+        <div id="tableContainer"></div>
+        <!-- <div id="update">Click or drag cells to build walls. <br />Press the 'Start' button when you finish and have
+			selected an algorithm.</div> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://kit.fontawesome.com/d1f3dd87b7.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
